@@ -20,4 +20,4 @@ To ensure production-grade code quality, this system is engineered around the st
 3. **Decoupled Class Hooks:** - Interactive nodes targeted by JavaScript use a distinct structural functional prefix (**`js-`**, e.g., `.js-counter-value`), which is never used for cosmetic layout styling.
    - Dynamic interface state adjustments utilize standard visual state prefixes (**`is-`**, e.g., `.is-dark-mode`) handled beautifully within CSS.
   
-   - The code is live at : 
+   - The code is live at : https://med-core-live-monitor.vercel.app/
