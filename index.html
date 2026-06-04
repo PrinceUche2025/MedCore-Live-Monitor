@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedCore | Clinical Vitals Monitor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Hospital Application Header -->
+    <header class="app-header">
+        <div class="logo-area">
+            <span class="hospital-icon">🏥</span>
+            <h1>MedCore Live Monitor</h1>
+        </div>
+        <button class="btn-theme js-theme-toggle" aria-label="Toggle Interface Mode">
+            <span class="theme-icon">🌙</span> Night Shift
+        </button>
+    </header>
+
+    <!-- Main Clinical Dashboard Workspace -->
+    <main class="app-layout-grid">
+        
+        <!-- Interactive Patient Vitals Card (IPO Loop Demonstration) -->
+        <section class="card widget-box">
+            <div class="card-status-badge">Patient ID: #24-CSC-026</div>
+            <h2>Heart Rate Simulator</h2>
+            <p class="widget-desc">Interact with the controllers to simulate a patient's live heart rate changes. The clinical monitor processes the heart rate logic in real-time.</p>
+            
+            <!-- Safe Digital Counter Display Grid -->
+            <div class="counter-display">
+                <span class="counter-value js-counter-value">72</span>
+                <span class="counter-unit">BPM</span>
+            </div>
+
+            <!-- Decoupled Interactive Controls -->
+            <div class="counter-controls">
+                <button class="btn btn-danger js-decrement">⬇ Administer Sedative</button>
+                <button class="btn btn-success js-increment">⬆ Administer Stimulant</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

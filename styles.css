@@ -1,0 +1,225 @@
+/* ======================================
+   1. GLOBAL STYLES & MEDICAL CANVAS
+   =========================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f1f5f9; /* Clean hospital ward light blue-gray */
+    color: #0f172a;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* ================================
+   2. CLINICAL APP HEADER
+   ======================= */
+.app-header {
+    width: 100%;
+    max-width: 520px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hospital-icon {
+    font-size: 1.5rem;
+}
+
+.app-header h1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #0f172a;
+    transition: color 0.4s;
+}
+
+/* ====================================
+   3. MODERN MEDICAL MONITOR CARD
+   ========================= */
+.card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 520px;
+    border-radius: 24px;
+    padding: 2.5rem;
+    position: relative;
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04), 
+                0 8px 16px -6px rgba(15, 23, 42, 0.04);
+    border: 1px solid #e2e8f0;
+    transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card-status-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background-color: #f1f5f9;
+    color: #475569;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+.card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+.widget-desc {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* ==========================================
+   4. TELEMETRY DISPLAY (BPM DIGITS)
+   ========================= */
+.counter-display {
+    background-color: #f8fafc;
+    border-radius: 20px;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.4s, border-color 0.4s;
+}
+
+.counter-value {
+    font-size: 6rem;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    background: linear-gradient(135deg, #0284c7, #0369a1); /* Smooth Clinical Blue Gradient */
+    -webkit-background-clip: text;
+    background-clip: text; /* Clears warning line 119 */
+    -webkit-text-fill-color: transparent;
+}
+
+.counter-unit {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 1px;
+    margin-top: -0.5rem;
+}
+
+/* ==========================================
+   5. MEDICAL CONTROLLERS (BUTTONS)
+   =========================== */
+.counter-controls {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 14px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    transition: transform 0.1s ease, opacity 0.2s ease;
+}
+
+.btn:active {
+    transform: scale(0.97); /* Responsive compression effect upon click */
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #0ea5e9, #2563eb); /* Active medicine stimulant blue */
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #f43f5e, #e11d48); /* Sedative rose/red tone */
+}
+
+/* Night Shift Mode Pill Toggle */
+.btn-theme {
+    background-color: #ffffff;
+    color: #0f172a;
+    border: 1px solid #e2e8f0;
+    padding: 0.6rem 1.2rem;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+    transition: background-color 0.4s, color 0.4s, border-color 0.4s;
+}
+
+/* ==========================================
+   6. PREMIUM NIGHT SHIFT SYSTEM ENVIRONMENT
+   ======================== */
+body.is-dark-mode {
+    background-color: #090d16; /* Clean midnight dark-room color */
+    color: #f8fafc;
+}
+
+body.is-dark-mode .app-header h1 {
+    color: #f8fafc;
+}
+
+body.is-dark-mode .card {
+    background-color: #111827; /* Dark dashboard glass background */
+    border-color: #1f2937;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+body.is-dark-mode .card-status-badge {
+    background-color: #1f2937;
+    color: #94a3b8;
+}
+
+body.is-dark-mode .widget-desc {
+    color: #94a3b8;
+}
+
+body.is-dark-mode .counter-display {
+    background-color: #1f2937;
+    border-color: #374151;
+}
+
+body.is-dark-mode .counter-value {
+    background: linear-gradient(135deg, #38bdf8, #7dd3fc); /* High-visibility glowing clinical digits */
+    -webkit-background-clip: text;
+    background-clip: text; /* Clears warning line 215 */
+    -webkit-text-fill-color: transparent;
+}
+
+body.is-dark-mode .btn-theme {
+    background-color: #1f2937;
+    color: #f8fafc;
+    border-color: #374151;
+}
